@@ -41,9 +41,9 @@ processes can be set as such:
 
 >     Processes = {
 >         # H -> ZZ -> 4lep processes
->         "ggH125_ZZ4lep"         : "/eos/user/t/thsteven/OpenData/opentuplepostprocess/renamed/4lep/MC/mc_345060.ggH125_ZZ4lep.4lep.root", (single file)
+>         "ggH125_ZZ4lep"         : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_345060.ggH125_ZZ4lep.4lep.root", (single file)
 >         ...
->         "data"                  : "/eos/user/t/thsteven/OpenData/opentuplepostprocess/renamed/4lep/Data/data_*.4lep.root",    (potentially many files)
+>         "data"                  : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/Data/data_*.4lep.root",    (potentially many files)
 >     }
 
 The files associated with the processes are found via python's glob module, enabling the use of unix style wildcards.
