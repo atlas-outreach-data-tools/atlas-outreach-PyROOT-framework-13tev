@@ -1,0 +1,8 @@
+*.pyc
+test_*/
+results*/
+*Results/
+MC
+Data
+*.pdf
+*~

@@ -1,5 +1,4 @@
 import ROOT
-import glob
 import importlib
 import sys
 import time
@@ -18,7 +17,7 @@ class Job(object):
         self.Name       = processName
         self.Configuration = configuration
         self.MaxEvents     = configuration["MaxEvents"]
-        self.InputFiles    = glob.glob(inputLocation)
+        self.InputFiles    = [str(inputLocation)]
 
         # Outputs
         self.OutputFileLocation = configuration["OutputDirectory"] + processName
