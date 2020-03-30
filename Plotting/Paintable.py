@@ -9,8 +9,8 @@ OverlayPaintable: used to overlay distributions, e.g. some exotic signal to comp
 """
 
 import ROOT
-import PlotStyle as PS
-import Database as DB
+from Plotting import PlotStyle as PS
+from Plotting import Database as DB
     
 class Paintable(object):
     """Baseclass for all paintables. The definition data member is a dictionary that holds information 

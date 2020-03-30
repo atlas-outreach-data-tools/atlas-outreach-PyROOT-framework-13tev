@@ -2,9 +2,9 @@ import ROOT
 import itertools 
 import math
 
-import Analysis
-import AnalysisHelpers as AH
-import Constants
+from Analysis import Analysis
+from Analysis import AnalysisHelpers
+from Analysis import Constants
 
 #======================================================================
         
@@ -41,7 +41,7 @@ class HZZAnalysis(Analysis.Analysis):
       weight = eventinfo.scalefactor()*eventinfo.eventWeight() if not self.getIsData() else 1
 
       # retrieve Leptons  
-      goodLeptons = AH.selectAndSortContainer(self.Store.getLeptons(), isGoodLepton, lambda p: p.pt())
+      goodLeptons = AnalysisHelpers.selectAndSortContainer(self.Store.getLeptons(), isGoodLepton, lambda p: p.pt())
       if not len(goodLeptons) == 4: return False
       self.countEvent("4 leptons", weight)
 
@@ -56,10 +56,6 @@ class HZZAnalysis(Analysis.Analysis):
       if candidate is None: return False;
 
  
-      # missing transverse momentum histograms
-      etmiss    = self.Store.getEtMiss()
-      self.hist_etmiss.Fill(etmiss.et(),weight)
-      
       # ZZ system histograms
       self.invMassZ1.Fill((candidate[0].tlv() + candidate[1].tlv()).M(), weight)
       self.invMassZ2.Fill((candidate[2].tlv() + candidate[3].tlv()).M(), weight)
@@ -76,8 +72,7 @@ class HZZAnalysis(Analysis.Analysis):
       [self.hist_leptID.Fill(lep.pdgId(), weight) for lep in goodLeptons]
       [self.hist_leptptc.Fill(lep.isoptconerel30(), weight) for lep in goodLeptons]
       [self.hist_leptetc.Fill(lep.isoetconerel20(), weight) for lep in goodLeptons]
-      [self.hist_lepz0.Fill(lep.z0(), weight) for lep in goodLeptons]
-      [self.hist_lepd0.Fill(lep.d0(), weight) for lep in goodLeptons]
+
       return True
   
   def finalize(self):

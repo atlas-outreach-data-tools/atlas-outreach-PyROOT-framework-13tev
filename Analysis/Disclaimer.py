@@ -9,4 +9,4 @@ results!
 
 
 def printDisclaimer():
-  print message
+  print(message)

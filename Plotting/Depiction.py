@@ -6,8 +6,8 @@ Ratio:         shows the ratio between two Paintables
 Agreement:     similar to ratio but emphasises the region around a ratio of 1, usually used to test data/mc agreement
 """
 import ROOT
-import PlotStyle as PS
-import Database as DB
+from Plotting import PlotStyle as PS
+from Plotting import Database as DB
 
 class Depiction(object):
     """Base class for all other depictions

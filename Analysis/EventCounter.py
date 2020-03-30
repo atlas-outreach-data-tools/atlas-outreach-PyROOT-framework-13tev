@@ -19,7 +19,7 @@ class EventCounter(object):
         self.log("+----------------------------------------------------------------+")
     
     def log(self, message):
-        print time.ctime() + " EventStatistics " + self.Name + ": " + message
+        print(time.ctime() + " EventStatistics " + self.Name + ": " + message)
         
     # Utility function      
     def update(self, cut, weight):

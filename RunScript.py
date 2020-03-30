@@ -4,8 +4,8 @@ import os
 import glob
 import ROOT
 import importlib
-import Analysis.Job as Job
-import Analysis.Disclaimer as DC
+from Analysis import Job as Job
+from Analysis import Disclaimer as DC
 from multiprocessing import Pool 
 
 def buildProcessingDict(configuration, samples):
@@ -17,7 +17,7 @@ def buildProcessingDict(configuration, samples):
         try:
             processingDict[sample] = configuration.Processes[sample]
         except :
-            print "Name of Sample %s not recognized. Sample was not added to processing list!" % sample
+            print("Name of Sample %s not recognized. Sample was not added to processing list!" % sample)
     return processingDict
 
 def checkAnalysis(configuration, analysisOption):
@@ -26,7 +26,7 @@ def checkAnalysis(configuration, analysisOption):
         importedAnalysisModule = importlib.import_module("Analysis." + analysisName)
         configuration.Job["Analysis"] = analysisName
     except ImportError:
-        print "Error when trying to read the analysis code for %s. Please check name validity" % analysisName
+        print("Error when trying to read the analysis code for %s. Please check name validity" % analysisName)
         sys.exit(1)
 
 def BuildJob(configuration, processName, fileLocation):

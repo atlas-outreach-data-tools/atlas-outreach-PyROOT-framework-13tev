@@ -19,8 +19,6 @@ config = {
     "lep_type"        : {"y_margin" : 0.5,},
     "lep_ptconerel30" : {"y_margin" : 0.3, "rebin" : 4},
     "lep_etconerel20" : {"y_margin" : 0.3, "rebin" : 4},
-    "lep_d0"          : {"y_margin" : 0.5, "rebin" : 2}, 
-    "lep_z0"          : {"y_margin" : 0.5, "rebin" : 2}, 
 
 },
 
