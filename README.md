@@ -1,9 +1,32 @@
-## About
-This is an analysis code that may be used to analyse the data of the ATLAS published dataset.
+# PyROOT framework for the 13 TeV ATLAS Open Data analysis
+
+
+## Introduction
+The framework makes use of the [Python language](https://www.python.org) and is interfaced with [ROOT](https://root.cern.ch/), and is available under this [Github link](https://github.com/atlas-outreach-data-tools/atlas-outreach-PyROOT-framework-13tev). After cloning/downloading the repository, the only thing you need to have is Python installed. This python2 branch of the framework uses python2. The master branch uses python3.
+
+The 13 TeV ATLAS Open Data are **hosted** on the [CERN Open Data portal](http://opendata.cern.ch/) and [ATLAS Open Data portal](http://opendata.atlas.cern) in thi\
+s [documentation](../datasets/files.md). The framework can access the samples in two ways:
+
++ reading them online directly (be default, they are stored in a [**GitHub repository**](https://github.com/atlas-outreach-data-tools/atlas-outreach-cpp-framework\
+-13tev));
++ reading them form a local storage (the samples need to be downloaded locally).
+
+The framework consists of **two main parts**:
+
++ the **analysis** part, located within the "Analysis" directory: it performs the particular object selection and stores the output histograms;
++ the **plotting** part, located within the "Plotting" directory: it makes the final Data / Prediction plots.
+
+![](Main_folder.png)
+
+---
 
 
 ## General Usage
 ### Analysis
+The analysis code is located in the **Analysis** folder, with files corresponding to the examples of physics analysis documented in [Physics analysis examples](../physics/intro.md). The naming of the analysis files follows a simple rule: "NNAnalysis", where NN can be *HZZ* for example.
+
+![](Analysis_folder.png)
+
 The files in the root directory of the installation are the various run scripts. Configuration files can be found in the *Configurations* folder. 
 
 As a first test to check whether everything works fine you can simply run a preconfigured analyis via
@@ -43,10 +66,7 @@ processes can be set as such:
 >         # H -> ZZ -> 4lep processes
 >         "ggH125_ZZ4lep"         : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_345060.ggH125_ZZ4lep.4lep.root", (single file)
 >         ...
->         "data"                  : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/Data/data_*.4lep.root",    (potentially many files)
 >     }
-
-The files associated with the processes are found via python's glob module, enabling the use of unix style wildcards.
 
 The names chosen for the processes are important as they are the keys that are used later in the _infofile.py_ to determine the necessary 
 scaling factors for correct plotting. 
@@ -58,7 +78,21 @@ Now we want to run over the full set of available samples. For this simply type:
 Use the options -p and -n if you have a multi core system and want to use multiple cores.
 Execution times are ~ 40 minutes in single core mode or ~ 25 minutes in multi core mode with 4 nodes.
 
+If everything was successful, the code will create in the results directory (**resultsNN**) a new file with the name of the corresponding sample (data_A, ttbar_lep,...).
+
+![](RunScript_output.png)
+
 ### Plotting
+
+The plotting code is located in the **Plotting** folder and contains the following files:
+
++ Histogram manipulation (**Database.py**): The functionality found here implements a metadata database used to manipulate the histograms;
++ Plot variaties (**Depiction.py**): Depictions define certain standardized plot varieties;
++ Paintable definitions (**Paintable.py**): splits the problem of plotting something into logical pieces;
++ Plot style (**PlotStyle.py**): The general style that is to be applied is defined here;
++ infofile (**infofile.py**): MC sample name, DSID, number of events, reduction efficiency, sum of weights and cross-section.
+
+![](Plotting_folder.png)
 
 Results may be plotted via:
 
@@ -96,7 +130,7 @@ Currently available options are:
 >     log_y    : bool  - if True is set as the bool the main depiction will be drawn in logarithmic scale
 >     y_margin : float - sets the fraction of whitespace above the largest contribution in the plot. Default value is 0.1.
 
-# Definition of Paintables and Depictions
+#### Definition of Paintables and Depictions
 Each Plot consists of several _depictions_ of _paintables_.
 A depiction is a certain standard type of visualising information. Availabe depictions include simple plots, ratios and agreement plots.
 A paintable is a histogram or stack with added information such as colors and which processes contribute to said histogram.
@@ -155,6 +189,10 @@ Ratio type plots will show the ratio of the first paintable w.r.t. the second pa
 Agreement type plots are typically used to evaluate the agreement between two paintables (usually the stack of predictions and the data).
 
 The order of the depictions is determined in line 2 of the code example above.
+
+If everything was successful, the code will create in the output directory (**Output**) the corresponding plots defined in **Configurations/PlotConf\_AnalysisName.py**.
+
+![](Plotting_output.png)
 
 ## In Depth Information
 
