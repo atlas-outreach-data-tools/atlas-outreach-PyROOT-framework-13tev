@@ -4,11 +4,9 @@
 ## Introduction
 The framework makes use of the [Python language](https://www.python.org) and is interfaced with [ROOT](https://root.cern.ch/), and is available under this [Github link](https://github.com/atlas-outreach-data-tools/atlas-outreach-PyROOT-framework-13tev). After cloning/downloading the repository, the only thing you need to have is Python installed. This python2 branch of the framework uses python2. The master branch uses python3.
 
-The 13 TeV ATLAS Open Data are **hosted** on the [CERN Open Data portal](http://opendata.cern.ch/) and [ATLAS Open Data portal](http://opendata.atlas.cern) in thi\
-s [documentation](../datasets/files.md). The framework can access the samples in two ways:
+The 13 TeV ATLAS Open Data are **hosted** on the [CERN Open Data portal](http://opendata.cern.ch/) and [ATLAS Open Data portal](http://opendata.atlas.cern) in this [documentation](../datasets/files.md). The framework can access the samples in two ways:
 
-+ reading them online directly (be default, they are stored in a [**GitHub repository**](https://github.com/atlas-outreach-data-tools/atlas-outreach-cpp-framework\
--13tev));
++ reading them online directly (by default, they are stored in an [**online repository**](https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/))
 + reading them form a local storage (the samples need to be downloaded locally).
 
 The framework consists of **two main parts**:
