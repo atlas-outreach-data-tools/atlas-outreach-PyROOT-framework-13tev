@@ -64,10 +64,9 @@ def writeXaxisTitle(Paintables):
     #drawItem(0.2, 0.88-0.13, "Data integral " + str(Paintables["data"].getHistogram().Integral()), 42, 0.02)
     
 def ATLASLabel( x, y):
-    drawItem(x    , y,      "ATLAS",              72,  0.03)
-    drawItem(x+0.1, y,      "Open Data",          42,  0.03)
-    drawItem(x    , y-0.025,"for education only", 52,  0.02)
-    drawItem(x    , y-0.065, "#sqrt{#it{s}} = 13 TeV, #int L dt = 10 fb^{-1}", 42, 0.02)
+    drawItem(x, y,      "ATLAS Open Data", 42,  0.03)
+    drawItem(x, y-0.025,"for education", 52,  0.02)
+    drawItem(x, y-0.065, "#sqrt{#it{s}} = 13 TeV, #int L dt = 10 fb^{-1}", 42, 0.02)
 
 def drawLegend(paintables, paintingOrder):
     y1 = 0.9
