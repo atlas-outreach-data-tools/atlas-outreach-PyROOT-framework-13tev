@@ -33,11 +33,16 @@ config = {
               
             "ZZ" : {
                 "Color"         : "#00cdff",
-                "Contributions" : ["llll","ZqqZll","llvv"]},
+                "Contributions" : ["llll"
+                                   #,"ZqqZll"
+                                   #,"llvv"
+                                  ]},
 
             "Other": {       
                 "Color"         : "#6b59d3",
-                "Contributions" : ["Zee", "Zmumu", "WqqZll", "lllv", "ttbar_lep"]},
+                "Contributions" : ["Zee", "Zmumu"
+                                   #, "WqqZll", "lllv"
+                                   , "ttbar_lep"]},
 
         }
     },
