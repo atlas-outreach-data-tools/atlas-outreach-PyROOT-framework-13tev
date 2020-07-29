@@ -19,11 +19,11 @@ Processes = {
     "Zmumu"                 : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_361107.Zmumu.4lep.root",
 
     # Diboson processes
-    "ZqqZll"                : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_363356.ZqqZll.4lep.root",
-    "WqqZll"                : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_363358.WqqZll.4lep.root",
+    #"ZqqZll"                : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_363356.ZqqZll.4lep.root",
+    #"WqqZll"                : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_363358.WqqZll.4lep.root",
     "llll"                  : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_363490.llll.4lep.root",
-    "lllv"                  : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_363491.lllv.4lep.root",
-    "llvv"                  : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_363492.llvv.4lep.root",
+    #"lllv"                  : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_363491.lllv.4lep.root",
+    #"llvv"                  : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_363492.llvv.4lep.root",
 
     # top pair processes
     "ttbar_lep"             : "https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/4lep/MC/mc_410000.ttbar_lep.4lep.root",
